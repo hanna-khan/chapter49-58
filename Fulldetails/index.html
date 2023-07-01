@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins:400,500,600,700&display=swap" />
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            background-color: var(--primary);
+            font-family: "Poppins";
+        }
+
+        :root {
+            --primary: #07586a;
+        }
+
+        h2 {
+            border-bottom: 1px solid #ccc;
+            padding-bottom: 10px;
+            margin-bottom: 10px;
+        }
+
+        button {
+            background-color: var(--primary);
+            color: white;
+            border: 1px solid #fff;
+            padding: 10px 20px;
+            border-radius: 10px;
+            cursor: pointer;
+            display: flex;
+            margin: 0 auto;
+        }
+
+        /* button:hover {
+            border: 2px solid #07586a;
+            color: #07586a;
+            background-color: transparent;
+            transition: all 0.3s ease-in;
+        } */
+        .hide{
+            display: none;
+        }
+        .show{
+            display: block;
+            margin-top: -60px;
+        }
+        #hideText{
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+    <h2>Maggi</h2>
+    <div class="details">
+        <p>
+            Maggi is a brand of instant noodles and seasonings manufactured by
+            Nestlé. It was first developed in Switzerland in 1884 by Julius Maggi,
+            who was looking for a way to provide a quick and easy meal for
+            working-class families. The first Maggi products were powdered soups and
+            sauces, but the company soon began to produce instant noodles as well.
+            <br /><br />
+            Maggi instant noodles are made from wheat flour, palm oil, salt, and a
+            variety of other ingredients, depending on the flavor. The noodles are
+            cooked in boiling water for two minutes, then drained and mixed with a
+            sachet of seasoning powder. The seasoning powder typically contains
+            spices, herbs, and MSG.
+            <br /><br />
+           </p>
+            <div>
+            <button id="viewMoreBtn">View More Details</button>
+            </div>
+           <div id="showText" class="hide">
+            <p>
+                <br /><br />
+                Maggi instant noodles are available in a variety of flavors, including
+                masala, chicken, and vegetable. They are also available in cup form,
+                which means that the noodles and seasoning are all in the same
+                container. Cup noodles can be cooked in the microwave in just a few
+                minutes.
+                <br /><br />
+    
+                Maggi instant noodles are a popular snack food and meal option in many
+                countries around the world. They are relatively inexpensive and easy to
+                prepare, making them a convenient choice for busy people. Maggi instant
+                noodles are also a good source of carbohydrates and protein. Here are <br>
+                some of the nutritional information for Maggi 2-Minute Noodles Masala:
+            <ul>
+                <li>
+                    Calories: 350
+                </li>
+                <li>
+                    Fat: 12 grams
+    
+                </li>
+                <li>
+                    Saturated fat: 3 grams
+    
+                </li>
+                <li>
+                    Trans fat: 0 grams
+    
+                </li>
+                <li>
+                    Cholesterol: 0 milligrams
+    
+                </li>
+                <li>
+                    Sodium: 1,250 milligrams
+    
+                </li>
+                <li>
+                    Carbohydrates: 52 grams
+    
+                </li>
+                <li>
+                    Sugar: 4 grams
+    
+                </li>
+                <li>
+                    Protein: 7 grams
+    
+                </li>
+            </ul>
+            </p>
+           </div>
+           <div>
+            <button id="hideText">Show less</button>
+           </div>
+    </div>
+    <script>
+        const viewMoreBtn = document.getElementById("viewMoreBtn")
+        const hideTextBtn = document.getElementById("hideText")
+        const showTextDiv = document.getElementById("showText")
+        
+        viewMoreBtn.addEventListener("click", function(){
+            showTextDiv.classList.add("show")
+            viewMoreBtn.style.display = 'none'
+            hideTextBtn.style.display = "block"
+        })
+        hideTextBtn.addEventListener("click", function(){
+            showTextDiv.classList.remove("show")
+            viewMoreBtn.style.display = 'block'
+            hideTextBtn.style.display = "none"
+        })
+    </script>
+</body>
+
+</html>

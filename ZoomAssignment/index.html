@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.3.0/css/bootstrap.min.css"
+    />
+    <style>
+      p {
+        font-size: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <p id="para">
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere optio
+      explicabo blanditiis, voluptatum saepe dolorum distinctio in magni soluta
+      harum quae eius, voluptas nihil mollitia consequuntur, minus magnam? Fuga,
+      ab.
+    </p>
+    <div class="container">
+      <button id="increment" class="btn btn-primary">Zoom In ➕</button>
+      <button id="decrement" class="btn btn-secondary">Zoom Out ➖</button>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+    <script>
+      const incrementBtn = document.getElementById("increment");
+      const decrementBtn = document.getElementById("decrement");
+      const para = document.getElementById("para");
+
+      incrementBtn.addEventListener("click", function () {
+        var incCount = parseInt(para.style.fontSize) || 10;
+        incCount++;
+        para.style.fontSize = incCount + "px";
+      });
+
+      decrementBtn.addEventListener("click", function () {
+        let decCount = parseInt(para.style.fontSize) || 10;
+        decCount--;
+        para.style.fontSize = decCount + "px";
+      });
+    </script>
+  </body>
+</html>

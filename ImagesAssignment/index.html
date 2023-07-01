@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      img {
+        width: 200px;
+        margin: 0 40px;
+      }
+
+      .fullImage {
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        max-width: 100%;
+        max-height: 100%;
+        width: 500px;
+        display: block;
+        z-index: 9999;
+      }
+
+      body {
+        height: 100vh;
+        margin: 0;
+        padding: 0;
+        background-color: #000000; /* Set your desired lighter background color here */
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        opacity: 1;
+      }
+      img {
+        cursor: pointer;
+      }
+      .cross {
+        color: #fff;
+        font-size: 3rem;
+        position: absolute;
+        top: 100px;
+        right: 100px;
+        display: none;
+        cursor: pointer;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="images">
+      <img id="img1" src="1.avif" alt="" />
+      <img src="2.avif" alt="" />
+      <img src="3.avif" alt="" />
+      <img src="4.avif" alt="" />
+    </div>
+    <span id="cross" class="cross"> &#x2717; </span>
+    <script>
+      const images = document.querySelectorAll(".images img");
+      const cross = document.getElementById("cross");
+      const body = document.querySelector("body");
+      images.forEach((element) => {
+        element.addEventListener("click", function () {
+          element.classList.add("fullImage");
+          cross.classList.add("cross");
+          cross.style.display = "block";
+          event.stopPropagation();
+          cross.addEventListener("click", function () {
+            element.classList.remove("fullImage");
+            cross.style.display = "none";
+          });
+        });
+      });
+      body.addEventListener("click", function () {
+        images.forEach((element) => {
+          element.classList.remove("fullImage");
+          cross.style.display = "none";
+        });
+      });
+    </script>
+  </body>
+</html>
